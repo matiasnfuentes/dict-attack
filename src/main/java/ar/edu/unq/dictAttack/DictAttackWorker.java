@@ -8,13 +8,20 @@ public class DictAttackWorker extends Thread{
         this.buffer = buffer ;
     }
 
+
     @Override
     public void run () {
         try {
-            //TODO: Los ar.edu.unq.dictAttack.DictAttackWorker deben consumir “unidades de trabajo”
-            // Propongo como unidades de trabajo cada uno de los hashes a buscar
-        } catch (Exception e) {
-            e.printStackTrace();
+            while (true){
+                Runnable task = buffer.read();
+                try {
+                    task.run();
+                }catch (PoisonException e){
+                    System.out.println("Se terminó la decodificación de los password" +
+                            "el thread se detiene.");
+                }
+            }
         }
+        catch ( InterruptedException e) {}
     }
 }
