@@ -24,7 +24,7 @@ public class DecodeTask implements Runnable {
     @Override
     public void run(){
         try {
-            CrackedWriter writer = new CrackedWriter();
+            ArchivoSalida writer = new ArchivoSalida();
             MessageDigest digest =  MessageDigest.getInstance("SHA-256");
             String [] parts = hashToDecode.split(";");
             String user = parts[0];
@@ -48,7 +48,7 @@ public class DecodeTask implements Runnable {
                 i++;
             }
             String hashObtained = user + " " + "pass : " + toHash.split("#")[1] + "\n";
-            writer.write(hashObtained);
+            writer.writeCrackedPass(hashObtained);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }

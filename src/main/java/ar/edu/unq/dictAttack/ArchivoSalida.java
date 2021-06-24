@@ -1,14 +1,16 @@
 package ar.edu.unq.dictAttack;
 
-import java.io.BufferedWriter;
+import java.io.*;
 
 public class ArchivoSalida {
-/*
-    BufferedWriter buffer = new BufferedWriter();
 
-    synchronized void wirteCrackedPass(String pass){
-        //TODO: este método debería escribir uno a uno los passwords
-        // en el archivo de salida cracked.txt.
-        // Utilizar la clase BufferedWriter para hacerlo.
-    }*/
+    public void writeCrackedPass(String content){
+        try (FileWriter writer = new FileWriter("./src/main/resources/cracked.txt", true);
+             BufferedWriter bw = new BufferedWriter(writer)) {
+             bw.write(content);
+        } catch (IOException e) {
+            System.err.format("IOException: %s%n", e);
+        }
+    }
+
 }
