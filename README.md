@@ -1,2 +1,3 @@
-# dict-attack
-Simulación de ataque por fuerza bruta.
+# Simulación de Ataque de fuerza bruta utilizando concurrencia
+
+- Inicio de proyecto.
