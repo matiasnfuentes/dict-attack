@@ -1,20 +1,18 @@
 ar/edu/unq/dictAttack/ArchivoSalida.java
  ar.edu.unq.dictAttack.ArchivoSalida
-ar/edu/unq/dictAttack/ThreadPool.java
- ar.edu.unq.dictAttack.ThreadPool
-ar/edu/unq/dictAttack/Buffer.java
- ar.edu.unq.dictAttack.Buffer
 ar/edu/unq/dictAttack/PoisonPill.java
  ar.edu.unq.dictAttack.PoisonPill
 ar/edu/unq/dictAttack/PoisonException.java
  ar.edu.unq.dictAttack.PoisonException
-ar/edu/unq/dictAttack/CrackedWriter.java
- ar.edu.unq.dictAttack.CrackedWriter
-ar/edu/unq/dictAttack/Main.java
- ar.edu.unq.dictAttack.Main
-ar/edu/unq/dictAttack/DictAttackWorker.java
- ar.edu.unq.dictAttack.DictAttackWorker
+ar/edu/unq/dictAttack/ThreadPool.java
+ ar.edu.unq.dictAttack.ThreadPool
+ar/edu/unq/dictAttack/Buffer.java
+ ar.edu.unq.dictAttack.Buffer
 ar/edu/unq/dictAttack/PasswordReader.java
  ar.edu.unq.dictAttack.PasswordReader
+ar/edu/unq/dictAttack/Main.java
+ ar.edu.unq.dictAttack.Main
 ar/edu/unq/dictAttack/DecodeTask.java
  ar.edu.unq.dictAttack.DecodeTask
+ar/edu/unq/dictAttack/DictAttackWorker.java
+ ar.edu.unq.dictAttack.DictAttackWorker

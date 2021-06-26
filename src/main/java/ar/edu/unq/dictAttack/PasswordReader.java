@@ -7,9 +7,9 @@ public class PasswordReader {
     FileReader f;
     BufferedReader b;
 
-    public PasswordReader(){
+    public PasswordReader(String path){
         try {
-            this.f = new FileReader("./src/main/resources/dictionary.txt");
+            this.f = new FileReader(path);
             this.b = new BufferedReader(f);
 
         } catch (FileNotFoundException e) {

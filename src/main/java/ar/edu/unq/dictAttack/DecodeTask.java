@@ -7,18 +7,15 @@ import java.util.Arrays;
 
 public class DecodeTask implements Runnable {
 
-    public static void main(String[] args) {
-        DecodeTask d  = new DecodeTask("perla.crespi.escamilla;a1c96fa7f92043af5fc468c7c09005dac6a9341a06bcf5e648e60c420b9d3046",99);
-        d.run();
-
-    }
 
     private String hashToDecode;
     private int maxSalt;
+    private String path;
 
-    public DecodeTask(String hashToDecode, int maxSalt){
+    public DecodeTask(String hashToDecode, int maxSalt, String path){
         this.hashToDecode = hashToDecode;
         this.maxSalt = maxSalt;
+        this.path = path;
     }
 
     @Override
@@ -36,7 +33,7 @@ public class DecodeTask implements Runnable {
             byte [] digested = new byte[0];
             int i = 0;
             while (i<=maxSalt && !Arrays.equals(digested, hash)){
-                PasswordReader reader = new PasswordReader();
+                PasswordReader reader = new PasswordReader(this.path);
                 salt = i + "#";
                 pass = reader.getPassword();
                 while(pass!=null && !Arrays.equals(digested, hash)){

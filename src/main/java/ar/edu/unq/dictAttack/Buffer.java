@@ -1,7 +1,7 @@
 package ar.edu.unq.dictAttack;
 
 public class Buffer {
-
+    //
     private Runnable [] data;
     private int begin = 0, end = 0;
 
@@ -9,7 +9,7 @@ public class Buffer {
         data = new Runnable [tamanio +1];
     }
 
-    synchronized void write ( Runnable o) throws InterruptedException {
+    synchronized void write (Runnable o) throws InterruptedException {
         while ( isFull ()) { wait (); }
         data [ begin ] = o;
         begin = next ( begin );
