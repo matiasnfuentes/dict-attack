@@ -25,5 +25,5 @@ public class Buffer {
     private boolean isEmpty () { return begin == end; }
     private boolean isFull () { return next ( begin ) == end ; }
     private int next ( int i) { return (i+1) %(data.length); }
-    //private int next ( int i) { return (i+1) %(data.length +1); }
+
 }
