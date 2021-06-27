@@ -1,0 +1,1 @@
+8 threads aprox 1m 48s Con ryzen 3 3200g 8 ram; 
