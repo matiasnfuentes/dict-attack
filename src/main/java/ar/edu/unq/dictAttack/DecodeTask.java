@@ -33,7 +33,7 @@ public class DecodeTask implements Runnable {
             byte [] digested = new byte[0];
             int i = 0;
             while (i<=maxSalt && !Arrays.equals(digested, hash)){
-                PasswordReader reader = new PasswordReader(this.path);
+                Reader reader = new Reader(this.path);
                 salt = i + "#";
                 pass = reader.getPassword();
                 while(pass!=null && !Arrays.equals(digested, hash)){
@@ -45,7 +45,7 @@ public class DecodeTask implements Runnable {
                 i++;
             }
             String hashObtained = user + " " + "pass : " + toHash.split("#")[1] + "\n";
-            writer.writeCrackedPass(hashObtained);
+            ArchivoSalida.write(hashObtained);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }

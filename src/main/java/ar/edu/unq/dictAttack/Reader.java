@@ -2,12 +2,12 @@ package ar.edu.unq.dictAttack;
 
 import java.io.*;
 
-public class PasswordReader {
+public class Reader {
 
     FileReader f;
     BufferedReader b;
 
-    public PasswordReader(String path){
+    public Reader(String path){
         try {
             this.f = new FileReader(path);
             this.b = new BufferedReader(f);

@@ -4,13 +4,21 @@ import java.io.*;
 
 public class ArchivoSalida {
 
-    public void writeCrackedPass(String content){
-        try (FileWriter writer = new FileWriter("./src/main/resources/cracked.txt", true);
-             BufferedWriter bw = new BufferedWriter(writer)) {
-             bw.write(content);
-        } catch (IOException e) {
-            System.err.format("IOException: %s%n", e);
+    public static BufferedWriter bw;
+
+    public static synchronized void write(String pass) {
+        try{
+            if( bw == null ) {
+                bw =  new BufferedWriter(new FileWriter("./src/main/resources/cracked.txt", true));
+            }
+            bw.write(pass);
+            bw.flush();
+        }
+        catch(Exception e)
+        {
+            throw new RuntimeException(e);
         }
     }
+
 
 }
