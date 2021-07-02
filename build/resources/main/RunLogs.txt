@@ -1,1 +1,39 @@
-8 threads aprox 1m 48s Con ryzen 3 3200g 8 ram; 
+8 threads y 2 buffer  01:42.059 Con ryzen 3 3200g 8 ram;
+8 threads y 4 buffer  00:01:35.498 Con ryzen 3 3200g 8 ram;
+8 threads y 8 buffer  00:01:34.999 Con ryzen 3 3200g 8 ram;
+8 threads y 20 buffer 00:01:38.025 Con ryzen 3 3200g 8 ram;
+
+10 threads y 2 buffer  00:01:37.416 Con ryzen 3 3200g 8 ram;
+10 threads y 4 buffer  00:01:35.506 Con ryzen 3 3200g 8 ram;
+10 threads y 8 buffer  00:01:37.967 Con ryzen 3 3200g 8 ram;
+10 threads y 20 buffer 00:01:35.824 Con ryzen 3 3200g 8 ram;
+
+12 threads y 2 buffer  00:01:37.515 Con ryzen 3 3200g 8 ram;
+12 threads y 4 buffer  00:01:37.368 Con ryzen 3 3200g 8 ram;
+12 threads y 8 buffer  00:01:35.757 Con ryzen 3 3200g 8 ram;
+12 threads y 20 buffer 00:01:36.720 Con ryzen 3 3200g 8 ram;
+
+16 threads y 2 buffer  00:01:35.632 Con ryzen 3 3200g 8 ram;
+16 threads y 4 buffer  00:01:39.090 Con ryzen 3 3200g 8 ram;
+16 threads y 8 buffer  00:01:36.152 Con ryzen 3 3200g 8 ram;
+16 threads y 20 buffer 00:01:34.860 Con ryzen 3 3200g 8 ram;
+
+6 threads y 2 buffer  00:01:34.246 Con ryzen 3 3200g 8 ram;
+6 threads y 4 buffer  00:01:39.261 Con ryzen 3 3200g 8 ram;
+6 threads y 8 buffer  00:01:37.925 Con ryzen 3 3200g 8 ram;
+6 threads y 20 buffer 00:01:38.006 Con ryzen 3 3200g 8 ram;
+
+4 threads y 2 buffer  00:01:35.712 Con ryzen 3 3200g 8 ram;
+4 threads y 4 buffer  00:01:40.944 Con ryzen 3 3200g 8 ram;
+4 threads y 8 buffer  00:01:39.379 Con ryzen 3 3200g 8 ram;
+4 threads y 20 buffer 00:01:38.262 Con ryzen 3 3200g 8 ram;
+
+2 threads y 2 buffer  00:03:08.925 Con ryzen 3 3200g 8 ram;
+2 threads y 4 buffer  00:03:04.041 Con ryzen 3 3200g 8 ram;
+2 threads y 8 buffer  00:03:07.702 Con ryzen 3 3200g 8 ram;
+2 threads y 20 buffer 00:03:24.381 Con ryzen 3 3200g 8 ram;
+
+1 threads y 2 buffer  00:03:08.925 Con ryzen 3 3200g 8 ram;
+1 threads y 4 buffer  00:05:54.849 Con ryzen 3 3200g 8 ram;
+1 threads y 8 buffer  00:06:06.995 Con ryzen 3 3200g 8 ram;
+1 threads y 20 buffer 00:05:55.072 Con ryzen 3 3200g 8 ram;

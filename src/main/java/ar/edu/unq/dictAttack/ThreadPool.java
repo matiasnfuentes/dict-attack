@@ -5,11 +5,11 @@ public class ThreadPool {
     private Buffer buffer;
     private int threadNumber;
 
-    public ThreadPool(Buffer buffer, int threadNumber){
+    public ThreadPool(Buffer buffer, int threadNumber,Clock reloj){
         this.buffer = buffer;
         this.threadNumber = threadNumber;
         for (int i =0;i<threadNumber;i++){
-            DictAttackWorker worker = new DictAttackWorker(this.buffer);
+            DictAttackWorker worker = new DictAttackWorker(this.buffer,reloj);
             worker.start();
         }
     }

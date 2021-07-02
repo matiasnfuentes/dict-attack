@@ -4,9 +4,10 @@ public class DictAttackWorker extends Thread{
 
     private Buffer buffer ;
     private boolean runinng = true;
+    private Clock reloj;
 
-    public DictAttackWorker (Buffer buffer){
-        this.buffer = buffer ;
+    public DictAttackWorker (Buffer buffer,Clock reloj){
+        this.buffer = buffer ; this.reloj = reloj;
     }
 
 
@@ -21,9 +22,12 @@ public class DictAttackWorker extends Thread{
                     runinng=false;
                     System.out.println("Se terminó la decodificación de los password" +
                             "el thread se detiene.");
+                    reloj.finalizoTarea();
                 }
             }
         }
-        catch ( InterruptedException e) {}
+        catch (InterruptedException e) {
+
+        }
     }
 }
