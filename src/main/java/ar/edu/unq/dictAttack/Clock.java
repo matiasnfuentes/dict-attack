@@ -24,7 +24,6 @@ public class Clock {
     synchronized public void finalizoTarea(){
         this.threadsEjecutando --;
         if(this.threadsEjecutando == 0){
-
             System.out.println("El tiempo de ejecución es de " + this.tiempoTotal());
         }
     }

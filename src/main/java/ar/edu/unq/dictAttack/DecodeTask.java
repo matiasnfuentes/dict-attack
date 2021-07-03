@@ -21,42 +21,35 @@ public class DecodeTask implements Runnable {
     @Override
     public void run(){
         try {
-            ArchivoSalida writer = new ArchivoSalida();
             MessageDigest digest =  MessageDigest.getInstance("SHA-256");
             String [] parts = hashToDecode.split(";");
-            String user = parts[0];
-            byte[] hash = hexToByteArray(parts[1]);
-            String toHash = "";
+            String usuario = parts[0];
+            byte[] hashBuscado = hexToByteArray(parts[1]);
+            String passwordConSalt = "";
             String pass;
             String salt;
             byte [] bytes;
-            byte [] digested = new byte[0];
+            byte [] hashActual = new byte[0];
             int i = 0;
-            while (i<=maxSalt && !Arrays.equals(digested, hash)){
+
+            while (i<=this.maxSalt && !Arrays.equals(hashActual, hashBuscado)){
                 Reader reader = new Reader(this.path);
                 salt = i + "#";
                 pass = reader.getPassword();
-                while(pass!=null && !Arrays.equals(digested, hash)){
-                    toHash = salt + pass;
-                    bytes = toHash.getBytes();
-                    digested = digest.digest(bytes);
+                while(pass!=null && !Arrays.equals(hashActual, hashBuscado)){
+                    passwordConSalt = salt + pass;
+                    bytes = passwordConSalt.getBytes();
+                    hashActual = digest.digest(bytes);
                     pass = reader.getPassword();
                 }
                 i++;
             }
-            String hashObtained = user + " " + "pass : " + toHash.split("#")[1] + "\n";
+
+            String hashObtained = usuario + " " + "pass : " + passwordConSalt.split("#")[1] + "\n";
             ArchivoSalida.write(hashObtained);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-    }
-
-    private String byteArrayTOHex(byte[] a ){
-        StringBuilder sb = new StringBuilder(a.length * 2);
-        for(byte b: a){
-            sb.append(String.format("%02x", b));
-        }
-        return sb.toString();
     }
 
     private byte[] hexToByteArray(String hash) {

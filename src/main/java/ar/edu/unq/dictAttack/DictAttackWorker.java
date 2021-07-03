@@ -26,8 +26,6 @@ public class DictAttackWorker extends Thread{
                 }
             }
         }
-        catch (InterruptedException e) {
-
-        }
+        catch (InterruptedException e) {}
     }
 }

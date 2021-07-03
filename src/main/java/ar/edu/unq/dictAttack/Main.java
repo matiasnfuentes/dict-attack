@@ -1,11 +1,17 @@
 package ar.edu.unq.dictAttack;
 
 public class Main {
-    //Recibe primero el buffer y despues la cantidad de trheads y por ultimo la cantidad de salt
+
+    //Recibe primero tamaño del buffer,  la cantidad de trheads y por ultimo la max de salt
+
     public static void main(String [] args) {
-        int tamanio =1; //Integer.parseInt(args[0]);
-        int cantidadThreads =1; //Integer.parseInt(args[1]);
-        int maxSalt =99; //Integer.parseInt(args[2]);
+
+        int tamanio = Integer.parseInt(args[0]);
+        int cantidadThreads = Integer.parseInt(args[1]);
+        int maxSalt = Integer.parseInt(args[2]);
+        if (maxSalt<0 || maxSalt>99){
+            throw new RuntimeException("El salt pasado como parámetro es incorrecto");
+        }
         Clock reloj = new Clock(cantidadThreads);
         Buffer buffer = new Buffer(tamanio);
         ThreadPool threadPool = new ThreadPool(buffer,cantidadThreads,reloj);
@@ -19,12 +25,9 @@ public class Main {
                 buffer.write(new DecodeTask(hash,maxSalt,pathDiccionario));
                 hash= reader.getPassword();
             }
-
             threadPool.stop();
         }
-        catch ( InterruptedException e) {
-
-        }
+        catch ( InterruptedException e) {}
     }
 
 }
