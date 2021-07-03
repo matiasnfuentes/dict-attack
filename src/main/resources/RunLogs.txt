@@ -37,3 +37,4 @@
 16 threads y 4 buffer  00:01:39.090 Con ryzen 3 3200g 8 ram;
 16 threads y 8 buffer  00:01:36.152 Con ryzen 3 3200g 8 ram;
 16 threads y 20 buffer 00:01:34.860 Con ryzen 3 3200g 8 ram;
+
